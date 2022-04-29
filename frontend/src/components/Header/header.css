@@ -1,0 +1,12 @@
+.nav_list{
+    margin-left: 50px;
+    cursor: pointer;
+}
+.nav_list:hover{
+    margin-left: 50px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    padding: 0px 15px 0px 15px;
+    border-radius: 5px;
+}

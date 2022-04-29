@@ -1,0 +1,11 @@
+.imageCard.img{
+    margin-left: 100px;
+}
+.addButton{
+    color: white;
+    background-color: rgb(30, 121, 30);
+}
+.addButton:hover{
+    color: white;
+    background-color: rgb(39, 82, 39);
+}
