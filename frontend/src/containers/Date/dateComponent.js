@@ -5,17 +5,13 @@ import DatePicker from 'react-date-picker';
 import ProductDetail from '../ProductDetail/productDetail';
 
 
-const DateComponent = () => {
+const DateComponent = ({getSelectedDateNumber}) => {
 
     const [value, onChange] = useState(new Date());
 
     const [dayNumberSelected, setDayNuberSelected] = useState(0)
     const [monthNumberSelected, setMonthNumberSelected] = useState(0)
     const [yearNumberSelected, setYearNumberSelected] = useState(0)
-
-
-    const [newSelectedDate, setNewSelectedDate] = useState(0)
-    const oneSelectd = newSelectedDate - dayNumberSelected
 
     const handleDayPicker = () => {
         const newValue = value.toLocaleDateString()
@@ -26,72 +22,100 @@ const DateComponent = () => {
         setDayNuberSelected(dayNumber)
         setMonthNumberSelected(monthNumber)
         setYearNumberSelected(yearNumber)
-
-
-        setNewSelectedDate(newValue)
     }
     useEffect(() => {
         handleDayPicker()
     }, [value])
 
 
-    
+
+    // const [oneChecked, setOneChecked] = useState(false);
+    // const [twoChecked, setTwoChecked] = useState(false);
+    // const [threeChecked, setThreeChecked] = useState(false);
+    // const [fourChecked, setFourChecked] = useState(false);
+    // const [fiveChecked, setFiveChecked] = useState(false);
+    // const [sixChecked, setSixChecked] = useState(false);
+
+    // const oneHandleChange = () => {
+    //     setOneChecked(!oneChecked)
+    // }
+    // const twoHandleChange = () => {
+    //     setTwoChecked(!twoChecked)
+    // }
+    // const threeHandleChange = () => {
+    //     setThreeChecked(!threeChecked)
+    // }
+    // const fourHandleChange = () => {
+    //     setFourChecked(!fourChecked)
+    // }
+    // const fiveHandleChange = () => {
+    //     setFiveChecked(!fiveChecked)
+    // }
+    // const sixHandleChange = () => {
+    //     setSixChecked(!sixChecked)
+    // }
+
+    // if (oneChecked == true) {
+    //     console.log("One Checked success");
+    // } else console.log("One Checked fail");
+
+    // if (twoChecked == true) {
+    //     console.log("Two Checked success");
+    // } else console.log("Two Checked fail");
 
 
 
-    const [checked, setChecked] = useState(false)
+    const [checked, setChecked] = useState(2);
 
-
-
-    // let currDates = new Date();
-    // currDates.setDate(currDates.getDate() - newSelectedDate)
-    // let currntDate = currDates.toLocaleDateString();
-    // console.log('currntDate', currntDate);
-
-    // let onePreDates = new Date();
-    // onePreDates.setDate(onePreDates.getDate() - (dayNumberSelected - 1))
-    // let onepDate = onePreDates.toLocaleDateString();
-    // console.log("onepDate", onepDate);
-
-    // const [allDates, setAllDates] = useState({ currntDate, onepDate })
-    // console.log('allDates', allDates);
-
-
-    const handleChange = () => {
-        setChecked(!checked)
+    const oneHandleChange = () => {
+        setChecked(dayNumberSelected)
+    }
+    const twoHandleChange = () => {
+        setChecked(dayNumberSelected -1)
+    }
+    const threeHandleChange = () => {
+        setChecked(dayNumberSelected -2)
+    }
+    const fourHandleChange = () => {
+        setChecked(dayNumberSelected -3)
+    }
+    const fiveHandleChange = () => {
+        setChecked(dayNumberSelected -4)
+    }
+    const sixHandleChange = () => {
+        setChecked(dayNumberSelected -5)
     }
 
-    if (checked == true) {
-        console.log("Checked success");
-    } else console.log("Checked fail");
+    console.log('checked:',checked);
 
+    getSelectedDateNumber(checked)
 
 
     return (
         <>
 
             <div className="custom-control custom-checkbox">
-                <input type="checkbox" className="custom-control-input" id="defaultUnchecked" onChange={handleChange} />
+                <input type="checkbox" className="custom-control-input" id="defaultUnchecked" onChange={oneHandleChange} />
                 <label className="custom-control-label" for="defaultUnchecked"> {`${monthNumberSelected}/${dayNumberSelected}/${yearNumberSelected}`} </label>
             </div>
             <div className="custom-control custom-checkbox">
-                <input type="checkbox" className="custom-control-input" id="defaultUnchecked" onChange={handleChange} />
+                <input type="checkbox" className="custom-control-input" id="defaultUnchecked" onChange={twoHandleChange} />
                 <label className="custom-control-label" for="defaultUnchecked"> {`${monthNumberSelected}/${dayNumberSelected - 1}/${yearNumberSelected}`} </label>
             </div>
             <div className="custom-control custom-checkbox">
-                <input type="checkbox" className="custom-control-input" id="defaultUnchecked" onChange={handleChange} />
+                <input type="checkbox" className="custom-control-input" id="defaultUnchecked" onChange={threeHandleChange} />
                 <label className="custom-control-label" for="defaultUnchecked"> {`${monthNumberSelected}/${dayNumberSelected - 2}/${yearNumberSelected}`} </label>
             </div>
             <div className="custom-control custom-checkbox">
-                <input type="checkbox" className="custom-control-input" id="defaultUnchecked" onChange={handleChange} />
+                <input type="checkbox" className="custom-control-input" id="defaultUnchecked" onChange={fourHandleChange} />
                 <label className="custom-control-label" for="defaultUnchecked"> {`${monthNumberSelected}/${dayNumberSelected - 3}/${yearNumberSelected}`} </label>
             </div>
             <div className="custom-control custom-checkbox">
-                <input type="checkbox" className="custom-control-input" id="defaultUnchecked" onChange={handleChange} />
+                <input type="checkbox" className="custom-control-input" id="defaultUnchecked" onChange={fiveHandleChange} />
                 <label className="custom-control-label" for="defaultUnchecked"> {`${monthNumberSelected}/${dayNumberSelected - 4}/${yearNumberSelected}`} </label>
             </div>
             <div className="custom-control custom-checkbox">
-                <input type="checkbox" className="custom-control-input" id="defaultUnchecked" onChange={handleChange} />
+                <input type="checkbox" className="custom-control-input" id="defaultUnchecked" onChange={sixHandleChange} />
                 <label className="custom-control-label" for="defaultUnchecked"> {`${monthNumberSelected}/${dayNumberSelected - 5}/${yearNumberSelected}`} </label>
             </div>
 
