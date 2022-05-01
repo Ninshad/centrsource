@@ -44,8 +44,6 @@ function Header() {
         <div>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
-          {/* <Navbar.Brand href="#home">Admin Dashboard</Navbar.Brand> */}
-          {/* <Link to="/" className="navbar-brand">Admin Dashboard</Link> */}
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
       <Nav>
@@ -54,22 +52,16 @@ function Header() {
                    HOME
                </li>
               <li className="nav_list">
-                   {/* <NavLink to="signup" className="nav-link">Signup</NavLink> */}
                    ABOUT US
                </li>
                <li className="nav_list">
-                   {/* <NavLink to="signup" className="nav-link">Signup</NavLink> */}
                    DIET PLANS
                </li>
                <li className="nav_list">
-                   {/* <NavLink to="signup" className="nav-link">Signup</NavLink> */}
                    SELECT YOUR PLANS
                </li>
       </Nav>
             
-              {/* <Nav.Link href="#deets">Signin</Nav.Link> */}
-              
-              {/* SignIn SignUp SigOut */}
 
               {auth.authenticate? renderLoggedInLinks() : renderNonLoggedInLinks() }
               

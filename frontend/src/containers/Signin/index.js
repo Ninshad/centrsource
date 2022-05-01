@@ -42,7 +42,7 @@ function Signin() {
   let navigate = useNavigate();
 
   if(auth.authenticate){
-    return  navigate('/')
+    return  navigate('/home')
   }
  
 

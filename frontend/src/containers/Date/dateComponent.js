@@ -63,9 +63,9 @@ const DateComponent = ({getSelectedDateNumber}) => {
     //     console.log("Two Checked success");
     // } else console.log("Two Checked fail");
 
+   
 
-
-    const [checked, setChecked] = useState(2);
+    const [checked, setChecked] = useState(1);
 
     const oneHandleChange = () => {
         setChecked(dayNumberSelected)
@@ -86,7 +86,9 @@ const DateComponent = ({getSelectedDateNumber}) => {
         setChecked(dayNumberSelected -5)
     }
 
-    console.log('checked:',checked);
+    
+
+    console.log('checked Arr:',checked);
 
     getSelectedDateNumber(checked)
 
@@ -120,8 +122,6 @@ const DateComponent = ({getSelectedDateNumber}) => {
             </div>
 
             <DatePicker onChange={onChange} value={value} onClickDay={handleDayPicker} />
-
-            <ProductDetail />
         </>
 
     )

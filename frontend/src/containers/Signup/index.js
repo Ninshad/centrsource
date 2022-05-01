@@ -37,7 +37,7 @@ function Signup() {
     }
 
     if(auth.authenticate){
-        return <Navigate to={'/'} />
+        return <Navigate to={'/home'} />
       }
 
     if(sign_up.loading){

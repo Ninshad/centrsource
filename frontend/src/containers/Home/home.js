@@ -3,6 +3,7 @@ import { useState } from 'react';
 import DateComponent from '../Date/dateComponent'
 import Header from '../../components/Header/header'
 import Products from '../Products/products'
+import ProductDetail from '../ProductDetail/productDetail';
 
 const Home = () => {
 

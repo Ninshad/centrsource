@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import axios from "../../helpers/axios";
+import ProductDetail from '../ProductDetail/productDetail';
 import './product.css'
 
 const Products = ({ selectedNumberFromDateComp }) => {
@@ -27,13 +28,16 @@ const Products = ({ selectedNumberFromDateComp }) => {
   }, [selectedNumberFromDateComp])
 
 
-// Selected Foods
-
+// Selected Foods Array
   const [selectedFoods, setSelectedFoods] = useState('');
+
+// Selected Foods ClassName 
   const [aClassName, setAclassName] = useState('');
   const [bClassName, setBclassName] = useState('');
   const [cClassName, setCclassName] = useState('');
   const [dClassName, setDclassName] = useState('');
+
+// Toggle Buttons  
   const [AtoggleButton, setAtoggleButton] = useState(true);
   const [BtoggleButton, setBtoggleButton] = useState(true);
   const [CtoggleButton, setCtoggleButton] = useState(true);
@@ -124,7 +128,6 @@ const Products = ({ selectedNumberFromDateComp }) => {
           </Card>
           </div>
         </div>
-
       </div>
 
     </div>

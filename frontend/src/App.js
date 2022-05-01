@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from './containers/Home/home';
 import Signin from './containers/Signin';
 import Signup from './containers/Signup';
-// import PrivateRoute from './components/HOC/privateRoute';
 
 
 function App() {
@@ -12,8 +11,10 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          
           <Route path="/signin" element={<Signin />} />
+          <Route path="*" element={<Signin />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           </Routes>
       </Router>
